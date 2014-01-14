@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Made by Austin DeLauney
+ * Made on 1/5/2014
+ * Used for an image, stores info and all
  */
 
 /**
@@ -43,6 +43,21 @@ public class Pixel
         return blue;
     }
     
+    public void setRed(int r)
+    {
+        red = r;
+    }
+    
+    public void setGreen(int g)
+    {
+        green = g;
+    }
+    
+    public void setBlue(int b)
+    {
+        blue = b;
+    }
+    
     public void setPixel(int r, int g, int b)
     {
         red = r;
@@ -52,6 +67,6 @@ public class Pixel
     
     public Color getShade()
     {
-        if
+        return null;
     }
 }

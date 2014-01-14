@@ -24,15 +24,14 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void robotInit() {
         driveTrain = new DriveTrain();
-        camera = new Camera("Map to camera");
-        camera
+        camera = new Camera();
     }
 
     /**
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-
+        
     }
 
     /**

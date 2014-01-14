@@ -6,23 +6,56 @@
  import edu.wpi.first.wpilibj.camera.*; 
  import edu.wpi.first.wpilibj.image.*;
 
-public class Camera 
+public class Camera
 {
     AxisCamera aCam;
     Pixel[][] pixels;
     ColorImage cI;
     
-    public Camera(String cam)
+    public Camera()
     {
         pixels = new Pixel[aCam.getResolution().height][aCam.getResolution().width];
+        
+        for(int i = 0; i < pixels.length; i++)
+        {
+            for(int j = 0; j < pixels.length; j++)
+            {
+                pixels[i][j] = new Pixel();
+            }
+        }
     }
     
     /**
      * Take a photo, do something 
      */
-    public void takePhoto() throws AxisCameraException, NIVisionException
+    public void takePhoto()
     {
-        cI = aCam.getImage();
+        try 
+        {
+            cI = aCam.getImage();
+            analyzePhoto(); //Assuming everything is A-OK, analyze the photo
+        } 
+        
+        catch (AxisCameraException ex) 
+        {
+            ex.printStackTrace();
+        } 
+        
+        catch (NIVisionException ex) 
+        {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void assignPixels()
+    {
+        for(int i = 0; i < pixels.length; i++)
+        {
+            for(int j = 0; j < pixels.length; j++)
+            {
+                pixels[i][j].setBlue();
+            }
+        }
     }
     
     /**
@@ -30,12 +63,7 @@ public class Camera
      */
     public void analyzePhoto()
     {
-        for(Pixel[] pArray : pixels)
-        {
-            for(Pixel p : pArray)
-            {
-                p.
-            }
-        }
+        //Assign the pixels first
+
     }
 }
