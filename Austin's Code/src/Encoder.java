@@ -1,15 +1,10 @@
+/**
+ * Created by Austin DeLauney, 02/08/2014
+ * Used to get the value of the encoder on the ball shooter axis thing
+ */
 
 import edu.wpi.first.wpilibj.PWM;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author austin
- */
 public class Encoder 
 {
     static PWM encoder;

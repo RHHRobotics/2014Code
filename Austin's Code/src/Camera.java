@@ -75,4 +75,13 @@ public class Camera
     {
         return false;
     }
+    
+    /**
+     * NOT IMPLIMENTED YET!
+     * Finds the hot target for auto
+     */
+    public static void findHotTarget()
+    {
+        
+    }
 }
