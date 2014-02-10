@@ -38,13 +38,11 @@ public class BallShooter {
     }
     
     /**
-     * NOT IMPLIMENTED YET!
-     * Finds the distance from robot to the goal
-     * @return the hypotenuse of the robot to the goal (Derived from the known hight and the distance sensor)
-     */
-    private static double distance()
+     * NOT IMPLIMENTED!
+     * @return Finds the best value to stop the shooter so it's at the correct angle
+     * /
+    private static int shootingAngle()
     {
-        return 0.0;
+        
     }
-    
 }
