@@ -36,9 +36,9 @@ public class RobotTemplate extends IterativeRobot {
         camera = new Camera();
         pnuematics = new PnuematicFunctions(new Compressor(), new DoubleSolenoid(), new DoubleSolenoid())
         ballShooter = new BallShooter();
-        shooterEncoder = new Encoder();
-        ultraSonic = new DistanceSensor();
-        xboxController = new Joystick();
+        shooterEncoder = new Encoder(5);
+        ultraSonic = new DistanceSensor(1);
+        xboxController = new Joystick(3);
     }
 
     /**

@@ -40,9 +40,9 @@ public class BallShooter {
     /**
      * NOT IMPLIMENTED!
      * @return Finds the best value to stop the shooter so it's at the correct angle
-     * /
+     */
     private static int shootingAngle()
     {
-        
+        return 0;
     }
 }

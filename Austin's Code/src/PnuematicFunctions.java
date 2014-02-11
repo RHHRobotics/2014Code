@@ -24,22 +24,10 @@ public class PnuematicFunctions {
         compressor.start();
     }
     
-    public static void launchBall(int encoderVal)
-    {
-        doubleSol1.set(DoubleSolenoid.Value.kForward); //Turn on the pistons
-        doubleSol2.set(DoubleSolenoid.Value.kForward);
-        
-        while(encoderVal < Encoder.getEncoderAngleValue()) //While the angle hasn't been hit keep pistons expanding
-        {
-            System.out.println("Solenoids expanding");
-        }
-        
-        doubleSol1.set(DoubleSolenoid.Value.kOff); //Once the angle has been hit bring the pistons back down via gravity
-        doubleSol2.set(DoubleSolenoid.Value.kOff);
-        
-        compressor.start(); //Start the compressor again
-    }
-    
+    /**
+     * Sets the state off the shooters
+     * @param b if True, turns them on, if False turns them to off, not backwards
+     */
     public static void setShooterPistons(boolean b)
     {
         if(b)
@@ -52,6 +40,28 @@ public class PnuematicFunctions {
         {
             doubleSol1.set(DoubleSolenoid.Value.kOff); //Turn off the pistons
             doubleSol2.set(DoubleSolenoid.Value.kOff);
+        }
+    }
+    
+    public static void modulateShooterPistons(int modulationTime)
+    {
+        try 
+        {
+            doubleSol1.set(DoubleSolenoid.Value.kForward);
+            doubleSol2.set(DoubleSolenoid.Value.kForward);
+            
+            Thread.sleep(modulationTime);
+            
+            doubleSol1.set(DoubleSolenoid.Value.kOff);
+            doubleSol2.set(DoubleSolenoid.Value.kOff);
+            
+        } 
+        
+        catch (InterruptedException ex) 
+        {
+            System.out.println("ERROR WITH SHOOTER PISTON MODULATION! \nTURNING ON PISTONS WITHOUT MODULATION!");
+            doubleSol1.set(DoubleSolenoid.Value.kForward);
+            doubleSol2.set(DoubleSolenoid.Value.kForward);
         }
     }
     
