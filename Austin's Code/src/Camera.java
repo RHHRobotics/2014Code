@@ -91,7 +91,7 @@ public class Camera
     }
     
     /**
-     * Made by Sohum Thakkar on 02/10/2014
+     * Made by Sohum Thakkar on 02/10/2014, edited by Austin DeLauney to return an array of points found by the camera
      * Finds the center of the circle
      */
      private Point[] getGoalCenterPoints() {
